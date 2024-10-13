@@ -14,7 +14,7 @@ authenticate_error = "Please follow the steps correctly. Not authenticated."
 
 async def GetWebAppData(client):
     notcoin = await client.get_entity("notpixel")
-    msg = await client(functions.messages.RequestWebViewRequest(notcoin,notcoin,platform="android",url="https://notpx.app/"))
+    msg = await client(functions.messages.RequestWebViewRequest(notcoin,notcoin,platform="ios",url="https://notpx.app/"))
     webappdata_global = msg.url.split('https://notpx.app/#tgWebAppData=')[1].replace("%3D","=").split('&tgWebAppVersion=')[0].replace("%26","&")
     user_data = webappdata_global.split("&user=")[1].split("&auth")[0]
     webappdata_global = webappdata_global.replace(user_data,unquote(user_data))
