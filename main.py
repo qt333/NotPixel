@@ -113,13 +113,13 @@ class NotPx:
             'Authorization': f'initData {WebAppQuery}',
             'Priority': 'u=1, i',
             'Referer': 'https://notpx.app/',
-            'Sec-Ch-Ua': 'Chromium;v=119, Not?A_Brand;v=24',
-            'Sec-Ch-Ua-Mobile': '?0',
-            'Sec-Ch-Ua-Platform': 'Linux',
+            'Sec-Ch-Ua': 'Chromium;v=128, Not?A_Brand;v=99',
+            'Sec-Ch-Ua-Mobile': '?1',
+            'Sec-Ch-Ua-Platform': 'iOS',
             'Sec-Fetch-Dest': 'empty',
             'Sec-Fetch-Mode': 'cors',
             'Sec-Fetch-Site': 'same-origin',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.105 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/128.0.6613.98 Mobile/15E148 Safari/604.1',
         }
 
     def request(self, method, end_point, key_check, data=None):
