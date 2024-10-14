@@ -96,10 +96,10 @@ class NotPx:
         }
     }
 
-    def __init__(self,session_name:str) -> None:
+    def __init__(self,session_name:str, proxy_number: int) -> None:
         self.session = requests.Session()
         if config.USE_PROXY:
-            self.session.proxies = config.PROXIES
+            self.session.proxies = config.PROXIES[proxy_number]
         self.session_name = session_name
         self.__update_headers()
 
@@ -343,9 +343,21 @@ def multithread_starter():
     dirs = os.listdir("sessions/")
     sessions = list(filter(lambda x: x.endswith(".session"),dirs))
     sessions = list(map(lambda x: x.split(".session")[0],sessions))
-    for session_name in sessions:
+    for i, session_name in enumerate(sessions):
+        if i <= 2:
+            proxy_number = 0
+        elif i <= 5:
+            proxy_number = 1
+        elif i <= 8:
+            proxy_number = 2
+        elif i <= 11:
+            proxy_number = 3
+        elif i <= 14:
+            proxy_number = 4
+        elif i <= 17:
+            proxy_number = 5
         try:
-            cli = NotPx("sessions/"+session_name)
+            cli = NotPx("sessions/"+session_name, proxy_number)
             threading.Thread(target=painter,args=[cli,session_name]).start()
             threading.Thread(target=mine_claimer,args=[cli,session_name]).start()
         except Exception as e:
