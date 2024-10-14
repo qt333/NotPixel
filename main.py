@@ -1,5 +1,6 @@
 from telethon.sync import TelegramClient, functions
 from urllib.parse import unquote
+from proxy import get_proxy_dict
 import threading
 import requests
 import urllib3
@@ -99,7 +100,7 @@ class NotPx:
     def __init__(self,session_name:str, proxy_number: int) -> None:
         self.session = requests.Session()
         if config.USE_PROXY:
-            self.session.proxies = config.PROXIES[proxy_number]
+            self.session.proxies = get_proxy_dict(config.PROXIES[proxy_number])
         self.session_name = session_name
         self.__update_headers()
 

@@ -16,9 +16,7 @@ USE_PROXY = False # or put True if you want use it
 # }
 
 #access to specific proxy by index
-PROXIES = [{
-    "http":"socks5://127.0.0.1"
-},
-    {"https":"socks5://127.0.0.1", # if you using socks4 or http only replace it with "socks5"}
-}
+PROXIES = [
+    "socks5://user:3243@127.0.0.1:8080",
+    "socks5://127.0.0.1:8080"
 ]
