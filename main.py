@@ -172,10 +172,12 @@ class NotPx:
 
     def autoPaintPixel(self):
         # making pixel randomly
-        colors = [ "#FFFFFF" , "#000000" , "#00CC78" , "#BE0039" ]
+        # colors = [ "#FFFFFF" , "#000000" , "#00CC78" , "#BE0039" ]
+        colors = ["#000000"]
         # random_pixel = (random.randint(100,990) * 1000) + random.randint(100,990)
         # paint in the central template coords
-        random_pixel = (random.randint(243,755) * 1000) + random.randint(243,755)
+        # random_pixel = (random.randint(243,755) * 1000) + random.randint(243,755)
+        random_pixel = (random.randint(842,969) * 1000) + random.randint(543,567)
         data = {"pixelId":random_pixel,"newColor":random.choice(colors)}
 
         return self.request("post","/repaint/start","balance",data)['balance']
