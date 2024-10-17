@@ -1,6 +1,9 @@
+from dotenv import load_dotenv
+import os
+load_dotenv()
 # put yours
-API_ID = 123
-API_HASH = "123"
+API_ID = os.getenv('API_ID')
+API_HASH = os.getenv("API_HASH")
 
 # =============[upgrades]================
 # default is 5 level you can change it your self
