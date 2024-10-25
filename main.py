@@ -178,8 +178,8 @@ class NotPx:
         # paint in the central template coords
         # random_pixel = (random.randint(243,755) * 1000) + random.randint(243,755)
         # random_pixel = (random.randint(842,969) * 1000) + random.randint(543,567) #dogs template upper area
-        # random_pixel = (random.randint(109,226) * 1000) + random.randint(272,293) #okx upper are
-        random_pixel = (random.randint(872,908) * 1000) + random.randint(872,906) #bitcoin upper left quad
+        random_pixel = (random.randint(109,226) * 1000) + random.randint(272,293) #okx upper are
+        # random_pixel = (random.randint(872,908) * 1000) + random.randint(872,906) #bitcoin upper left quad
         data = {"pixelId":random_pixel,"newColor":random.choice(colors)}
 
         return self.request("post","/repaint/start","balance",data)['balance']
